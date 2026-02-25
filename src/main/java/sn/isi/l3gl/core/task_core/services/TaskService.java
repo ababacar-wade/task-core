@@ -1,8 +1,11 @@
-package sn.isi.l3gl.core.task_core.entity;
+package sn.isi.l3gl.core.task_core.services;
 
+import org.springframework.stereotype.Service;
+import sn.isi.l3gl.core.task_core.entity.Task;
 import sn.isi.l3gl.core.task_core.enumeration.StatusEnum;
 import sn.isi.l3gl.core.task_core.repository.TaskRepository;
 
+@Service
 public class TaskService {
 
     private final TaskRepository taskRepository;

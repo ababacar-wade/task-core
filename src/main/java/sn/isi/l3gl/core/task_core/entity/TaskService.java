@@ -24,4 +24,10 @@ public class TaskService {
     public List<Task> listTasks() {
         return taskRepository.findAll();
     }
+
+    public Task updateStatus(int id, StatusEnum newStatus) {
+        Task task = taskRepository.findById(id).orElseThrow();
+        task.setStatus(newStatus);
+        return taskRepository.save(task);
+    }
 }

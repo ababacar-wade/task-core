@@ -30,4 +30,8 @@ public class TaskService {
         task.setStatus(newStatus);
         return taskRepository.save(task);
     }
+
+    public long countCompletedTasks() {
+        return taskRepository.countByStatus(StatusEnum.DONE);
+    }
 }

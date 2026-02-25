@@ -3,6 +3,8 @@ package sn.isi.l3gl.core.task_core.entity;
 import sn.isi.l3gl.core.task_core.enumeration.StatusEnum;
 import sn.isi.l3gl.core.task_core.repository.TaskRepository;
 
+import java.util.List;
+
 public class TaskService {
 
     private final TaskRepository taskRepository;
@@ -17,5 +19,9 @@ public class TaskService {
         task.setDescription(description);
         task.setStatus(StatusEnum.TODO);
         return taskRepository.save(task);
+    }
+
+    public List<Task> listTasks() {
+        return taskRepository.findAll();
     }
 }
